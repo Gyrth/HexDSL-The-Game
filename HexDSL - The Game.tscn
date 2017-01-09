@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=1]
+[gd_scene load_steps=31 format=1]
 
 [ext_resource path="res://scripts/Game_Setup.gd" type="Script" id=1]
 [ext_resource path="res://environment/light.png" type="Texture" id=2]
@@ -7,13 +7,16 @@
 [ext_resource path="res://environment/dirt_tile.png" type="Texture" id=5]
 [ext_resource path="res://environment/dirt_tile_dark.png" type="Texture" id=6]
 [ext_resource path="res://environment/dirt_tile_grey.png" type="Texture" id=7]
-[ext_resource path="res://scripts/PlayerControl.gd" type="Script" id=8]
-[ext_resource path="res://character/occlusion_idle.tres" type="OccluderPolygon2D" id=9]
-[ext_resource path="res://Character.tres" type="SpriteFrames" id=10]
-[ext_resource path="res://scripts/GameControl.gd" type="Script" id=11]
-[ext_resource path="res://icon.png" type="Texture" id=12]
-[ext_resource path="res://Fonts/FifteenNarrow.fnt" type="BitmapFont" id=13]
-[ext_resource path="res://scripts/UIControl.gd" type="Script" id=14]
+[ext_resource path="res://environment/good_games.png" type="Texture" id=8]
+[ext_resource path="res://environment/OcclusionTube.tres" type="OccluderPolygon2D" id=9]
+[ext_resource path="res://environment/bad_games.png" type="Texture" id=10]
+[ext_resource path="res://scripts/PlayerControl.gd" type="Script" id=11]
+[ext_resource path="res://character/occlusion_idle.tres" type="OccluderPolygon2D" id=12]
+[ext_resource path="res://Character.tres" type="SpriteFrames" id=13]
+[ext_resource path="res://scripts/GameControl.gd" type="Script" id=14]
+[ext_resource path="res://icon.png" type="Texture" id=15]
+[ext_resource path="res://Fonts/FifteenNarrow.fnt" type="BitmapFont" id=16]
+[ext_resource path="res://scripts/UIControl.gd" type="Script" id=17]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -28,7 +31,12 @@ extents = Vector2( 3.50401, 46.4887 )
 [sub_resource type="RectangleShape2D" id=3]
 
 custom_solver_bias = 0.0
-extents = Vector2( 3.14894, 5.11033 )
+extents = Vector2( 6.16254, 10.6241 )
+
+[sub_resource type="RectangleShape2D" id=13]
+
+custom_solver_bias = 0.0
+extents = Vector2( 11.1217, 10.004 )
 
 [sub_resource type="RectangleShape2D" id=4]
 
@@ -187,21 +195,20 @@ shadow/item_mask = 1
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
-editor/display_folded = true
 transform/pos = Vector2( 256.003, 144.004 )
 transform/scale = Vector2( 8.0001, 4.50012 )
 input/pickable = false
 shapes/0/shape = SubResource( 1 )
-shapes/0/transform = Matrix32( 1.07843, 0, 0, 1.06667, 1.20836, 38.2826 )
+shapes/0/transform = Matrix32( 1.07843, 0, 0, 1.06667, 1.45836, 32.505 )
 shapes/0/trigger = false
 shapes/1/shape = SubResource( 1 )
-shapes/1/transform = Matrix32( 1.07843, 0, 0, 1.06667, 0.519262, -38.2839 )
+shapes/1/transform = Matrix32( 1.07843, 0, 0, 1.06667, 0.644262, -33.1729 )
 shapes/1/trigger = false
 shapes/2/shape = SubResource( 2 )
-shapes/2/transform = Matrix32( 1.07843, 0, 0, 1.06667, -35.7807, 0 )
+shapes/2/transform = Matrix32( 1.07843, 0, 0, 1.06667, -32.4057, 0 )
 shapes/2/trigger = false
 shapes/3/shape = SubResource( 2 )
-shapes/3/transform = Matrix32( 1.07843, 0, 0, 1.06667, 35.7783, -0.855907 )
+shapes/3/transform = Matrix32( 1.07843, 0, 0, 1.06667, 32.2783, -0.63369 )
 shapes/3/trigger = false
 collision/layers = 1
 collision/mask = 1
@@ -212,7 +219,6 @@ bounce = 0.0
 
 [node name="ResetTrigger_Top_Left" type="Area2D" parent="StaticBody2D"]
 
-editor/display_folded = true
 transform/scale = Vector2( 1.07843, 1.06667 )
 input/pickable = false
 shapes/0/shape = SubResource( 3 )
@@ -298,33 +304,33 @@ shape = SubResource( 3 )
 trigger = true
 _update_shape_index = 0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="Wall" type="CollisionShape2D" parent="StaticBody2D"]
 
-transform/pos = Vector2( 1.20836, 38.2826 )
+transform/pos = Vector2( 1.45836, 32.505 )
 transform/scale = Vector2( 1.07843, 1.06667 )
 shape = SubResource( 1 )
 trigger = false
 _update_shape_index = 0
 
-[node name="CollisionShape2D1" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="Wall 2" type="CollisionShape2D" parent="StaticBody2D"]
 
-transform/pos = Vector2( 0.519262, -38.2839 )
+transform/pos = Vector2( 0.644262, -33.1729 )
 transform/scale = Vector2( 1.07843, 1.06667 )
 shape = SubResource( 1 )
 trigger = false
 _update_shape_index = 1
 
-[node name="CollisionShape2D 2" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="Wall 3" type="CollisionShape2D" parent="StaticBody2D"]
 
-transform/pos = Vector2( -35.7807, 0 )
+transform/pos = Vector2( -32.4057, 0 )
 transform/scale = Vector2( 1.07843, 1.06667 )
 shape = SubResource( 2 )
 trigger = false
 _update_shape_index = 2
 
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="Wall 4" type="CollisionShape2D" parent="StaticBody2D"]
 
-transform/pos = Vector2( 35.7783, -0.855907 )
+transform/pos = Vector2( 32.2783, -0.63369 )
 transform/scale = Vector2( 1.07843, 1.06667 )
 shape = SubResource( 2 )
 trigger = false
@@ -359,15 +365,152 @@ modulate = Color( 0.378906, 0.378906, 0.378906, 1 )
 region = true
 region_rect = Rect2( 0, 0, 567, 50 )
 
+[node name="GoodGame" type="Area2D" parent="."]
+
+editor/display_folded = true
+transform/pos = Vector2( 466.878, 43.004 )
+transform/rot = 135.0
+transform/scale = Vector2( 1, 1 )
+input/pickable = false
+shapes/0/shape = SubResource( 13 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+script/script = ExtResource( 3 )
+__meta__ = { "_edit_group_":true }
+
+[node name="Trigger" type="CollisionShape2D" parent="GoodGame"]
+
+shape = SubResource( 13 )
+trigger = true
+_update_shape_index = 0
+
+[node name="Sprite" type="Sprite" parent="GoodGame"]
+
+transform/pos = Vector2( 2, 21 )
+texture = ExtResource( 8 )
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="GoodGame"]
+
+visibility/behind_parent = true
+occluder = ExtResource( 9 )
+light_mask = 1
+
+[node name="GoodGame1" type="Area2D" parent="."]
+
+editor/display_folded = true
+transform/pos = Vector2( 469.878, 244.004 )
+transform/rot = 45.0
+transform/scale = Vector2( 1, 1 )
+input/pickable = false
+shapes/0/shape = SubResource( 13 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+script/script = ExtResource( 3 )
+__meta__ = { "_edit_group_":true }
+
+[node name="Trigger" type="CollisionShape2D" parent="GoodGame1"]
+
+shape = SubResource( 13 )
+trigger = true
+_update_shape_index = 0
+
+[node name="Sprite" type="Sprite" parent="GoodGame1"]
+
+transform/pos = Vector2( 2, 21 )
+texture = ExtResource( 8 )
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="GoodGame1"]
+
+visibility/behind_parent = true
+occluder = ExtResource( 9 )
+light_mask = 1
+
+[node name="BadGame" type="Area2D" parent="."]
+
+editor/display_folded = true
+transform/pos = Vector2( 45.8783, 244.004 )
+transform/rot = -45.0
+transform/scale = Vector2( 1, 1 )
+input/pickable = false
+shapes/0/shape = SubResource( 13 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+script/script = ExtResource( 3 )
+__meta__ = { "_edit_group_":true }
+
+[node name="Trigger" type="CollisionShape2D" parent="BadGame"]
+
+shape = SubResource( 13 )
+trigger = true
+_update_shape_index = 0
+
+[node name="Sprite" type="Sprite" parent="BadGame"]
+
+transform/pos = Vector2( -4, 23 )
+texture = ExtResource( 10 )
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="BadGame"]
+
+visibility/behind_parent = true
+occluder = ExtResource( 9 )
+light_mask = 1
+
+[node name="BadGame1" type="Area2D" parent="."]
+
+editor/display_folded = true
+transform/pos = Vector2( 44.8783, 46.004 )
+transform/rot = -135.0
+transform/scale = Vector2( 1, 1 )
+input/pickable = false
+shapes/0/shape = SubResource( 13 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+script/script = ExtResource( 3 )
+__meta__ = { "_edit_group_":true }
+
+[node name="Trigger" type="CollisionShape2D" parent="BadGame1"]
+
+shape = SubResource( 13 )
+trigger = true
+_update_shape_index = 0
+
+[node name="Sprite" type="Sprite" parent="BadGame1"]
+
+transform/pos = Vector2( -4, 23 )
+texture = ExtResource( 10 )
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="BadGame1"]
+
+visibility/behind_parent = true
+occluder = ExtResource( 9 )
+light_mask = 1
+
 [node name="Player" type="Node2D" parent="."]
 
 editor/display_folded = true
 transform/pos = Vector2( 132, 202 )
-script/script = ExtResource( 8 )
+script/script = ExtResource( 11 )
 __meta__ = { "_edit_group_":true }
 
 [node name="RigidBody" type="RigidBody2D" parent="Player"]
 
+editor/display_folded = true
 input/pickable = false
 shapes/0/shape = SubResource( 4 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
@@ -393,7 +536,7 @@ damp_override/angular = -1.0
 [node name="LightOccluder2D" type="LightOccluder2D" parent="Player/RigidBody"]
 
 visibility/behind_parent = true
-occluder = ExtResource( 9 )
+occluder = ExtResource( 12 )
 light_mask = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player/RigidBody"]
@@ -407,7 +550,7 @@ _update_shape_index = 0
 [node name="Sprite" type="AnimatedSprite" parent="Player/RigidBody"]
 
 z/relative = false
-frames = ExtResource( 10 )
+frames = ExtResource( 13 )
 animation = "idle_forward"
 playing = true
 
@@ -419,7 +562,7 @@ __meta__ = { "_edit_group_":true }
 
 [node name="Game" type="Node2D" parent="SpawnPoint"]
 
-script/script = ExtResource( 11 )
+script/script = ExtResource( 14 )
 
 [node name="RigidBody2D" type="RigidBody2D" parent="SpawnPoint/Game"]
 
@@ -447,7 +590,7 @@ damp_override/angular = -1.0
 
 [node name="AnimatedSprite" type="Sprite" parent="SpawnPoint/Game/RigidBody2D"]
 
-texture = ExtResource( 12 )
+texture = ExtResource( 15 )
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="SpawnPoint/Game/RigidBody2D/AnimatedSprite"]
 
@@ -511,7 +654,7 @@ margin/left = 0.0
 margin/top = 0.0
 margin/right = 256.0
 margin/bottom = 25.0
-custom_fonts/font = ExtResource( 13 )
+custom_fonts/font = ExtResource( 16 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 text = "Score: 90834746"
 align = 1
@@ -524,6 +667,6 @@ max_lines_visible = -1
 [node name="UIControl" type="Node2D" parent="."]
 
 process/pause_mode = 2
-script/script = ExtResource( 14 )
+script/script = ExtResource( 17 )
 
 

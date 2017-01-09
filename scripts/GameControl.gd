@@ -18,7 +18,7 @@ func _ready():
 	pass
 
 func area_enter(area):
-#	print(str("Colliding with area2d! ", area.get_name()))
+	print(str("Colliding with area2d! ", area.get_name()))
 	var name = area.get_name()
 	if(name == "ResetTrigger_Top_Left"):
 		animation_player.play("lost_left_top")
