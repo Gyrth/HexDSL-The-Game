@@ -1,0 +1,446 @@
+[gd_scene load_steps=9 format=1]
+
+[ext_resource path="res://Intro.gd" type="Script" id=1]
+[ext_resource path="res://Character.tres" type="SpriteFrames" id=2]
+[ext_resource path="res://character/front_idle.png" type="Texture" id=3]
+[ext_resource path="res://Fonts/FifteenNarrow.fnt" type="BitmapFont" id=4]
+[ext_resource path="res://ButtonHoverBackground.tres" type="StyleBox" id=5]
+
+[sub_resource type="CanvasItemMaterial" id=1]
+
+shader/shading_mode = 0
+
+[sub_resource type="ImageTexture" id=2]
+
+flags = 0
+image = Image()
+size = Vector2( 0, 0 )
+storage = 0
+lossy_quality = 0.7
+
+[sub_resource type="Animation" id=3]
+
+length = 5.0
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Label:rect/pos")
+tracks/0/interp = 1
+tracks/0/imported = false
+tracks/0/keys = { "times":FloatArray( 1, 3 ), "transitions":FloatArray( 1, 1 ), "update":0, "values":[ Vector2( 0, -75 ), Vector2( 0, 0 ) ] }
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:transform/pos")
+tracks/1/interp = 1
+tracks/1/imported = false
+tracks/1/keys = { "times":FloatArray( 0, 3 ), "transitions":FloatArray( 1, 1 ), "update":0, "values":[ Vector2( 256, 600 ), Vector2( 256, 288 ) ] }
+tracks/2/type = "value"
+tracks/2/path = NodePath("Sprite:transform/rot")
+tracks/2/interp = 1
+tracks/2/imported = false
+tracks/2/keys = { "times":FloatArray( 0, 3 ), "transitions":FloatArray( 1, 1 ), "update":0, "values":[ 0.0, 0.0 ] }
+tracks/3/type = "value"
+tracks/3/path = NodePath("Exit:rect/pos")
+tracks/3/interp = 1
+tracks/3/imported = false
+tracks/3/keys = { "times":FloatArray( 0, 3 ), "transitions":FloatArray( 1, 1 ), "update":0, "values":[ Vector2( -156, 100 ), Vector2( 11, 100 ) ] }
+tracks/4/type = "value"
+tracks/4/path = NodePath("Start:rect/pos")
+tracks/4/interp = 1
+tracks/4/imported = false
+tracks/4/keys = { "times":FloatArray( 0, 3 ), "transitions":FloatArray( 1, 1 ), "update":0, "values":[ Vector2( 512, 100 ), Vector2( 344, 100 ) ] }
+
+[node name="Node2D" type="Node2D"]
+
+script/script = ExtResource( 1 )
+
+[node name="RainingMen" type="Node2D" parent="."]
+
+editor/display_folded = true
+
+[node name="RigidBody2D" type="RigidBody2D" parent="RainingMen"]
+
+editor/display_folded = true
+transform/pos = Vector2( 116, -173 )
+input/pickable = false
+collision/layers = 1
+collision/mask = 1
+mode = 0
+mass = 1.0
+friction = 1.0
+bounce = 0.0
+gravity_scale = 1.0
+custom_integrator = false
+continuous_cd = 0
+contacts_reported = 0
+contact_monitor = false
+sleeping = false
+can_sleep = true
+velocity/linear = Vector2( 0, 0 )
+velocity/angular = 5.0
+damp_override/linear = 2.0
+damp_override/angular = 0.0
+__meta__ = { "_edit_group_":true }
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="RainingMen/RigidBody2D"]
+
+frames = ExtResource( 2 )
+animation = "walk_backward"
+playing = true
+
+[node name="RigidBody2D4 2" type="RigidBody2D" parent="RainingMen"]
+
+editor/display_folded = true
+transform/pos = Vector2( 232, -600 )
+input/pickable = false
+collision/layers = 1
+collision/mask = 1
+mode = 0
+mass = 1.0
+friction = 1.0
+bounce = 0.0
+gravity_scale = 1.0
+custom_integrator = false
+continuous_cd = 0
+contacts_reported = 0
+contact_monitor = false
+sleeping = false
+can_sleep = true
+velocity/linear = Vector2( 0, 0 )
+velocity/angular = 5.0
+damp_override/linear = 2.0
+damp_override/angular = 0.0
+__meta__ = { "_edit_group_":true }
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="RainingMen/RigidBody2D4 2"]
+
+frames = ExtResource( 2 )
+animation = "walk_backward"
+frame = 2
+playing = true
+
+[node name="RigidBody2D1" type="RigidBody2D" parent="RainingMen"]
+
+editor/display_folded = true
+transform/pos = Vector2( 385, -482 )
+input/pickable = false
+collision/layers = 1
+collision/mask = 1
+mode = 0
+mass = 1.0
+friction = 1.0
+bounce = 0.0
+gravity_scale = 1.0
+custom_integrator = false
+continuous_cd = 0
+contacts_reported = 0
+contact_monitor = false
+sleeping = false
+can_sleep = true
+velocity/linear = Vector2( 0, 0 )
+velocity/angular = 5.0
+damp_override/linear = 2.0
+damp_override/angular = 0.0
+__meta__ = { "_edit_group_":true }
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="RainingMen/RigidBody2D1"]
+
+frames = ExtResource( 2 )
+animation = "walk_left"
+playing = true
+
+[node name="RigidBody2D4" type="RigidBody2D" parent="RainingMen"]
+
+editor/display_folded = true
+transform/pos = Vector2( 365, -689 )
+input/pickable = false
+collision/layers = 1
+collision/mask = 1
+mode = 0
+mass = 1.0
+friction = 1.0
+bounce = 0.0
+gravity_scale = 1.0
+custom_integrator = false
+continuous_cd = 0
+contacts_reported = 0
+contact_monitor = false
+sleeping = false
+can_sleep = true
+velocity/linear = Vector2( 0, 0 )
+velocity/angular = 5.0
+damp_override/linear = 2.0
+damp_override/angular = 0.0
+__meta__ = { "_edit_group_":true }
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="RainingMen/RigidBody2D4"]
+
+frames = ExtResource( 2 )
+animation = "walk_left"
+frame = 3
+playing = true
+
+[node name="RigidBody2D2" type="RigidBody2D" parent="RainingMen"]
+
+editor/display_folded = true
+transform/pos = Vector2( 257, -318 )
+input/pickable = false
+collision/layers = 1
+collision/mask = 1
+mode = 0
+mass = 1.0
+friction = 1.0
+bounce = 0.0
+gravity_scale = 1.0
+custom_integrator = false
+continuous_cd = 0
+contacts_reported = 0
+contact_monitor = false
+sleeping = false
+can_sleep = true
+velocity/linear = Vector2( 0, 0 )
+velocity/angular = 5.0
+damp_override/linear = 2.0
+damp_override/angular = 0.0
+__meta__ = { "_edit_group_":true }
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="RainingMen/RigidBody2D2"]
+
+frames = ExtResource( 2 )
+animation = "walk_right"
+frame = 3
+playing = true
+
+[node name="RigidBody2D4 3" type="RigidBody2D" parent="RainingMen"]
+
+editor/display_folded = true
+transform/pos = Vector2( 408, -236 )
+input/pickable = false
+collision/layers = 1
+collision/mask = 1
+mode = 0
+mass = 1.0
+friction = 1.0
+bounce = 0.0
+gravity_scale = 1.0
+custom_integrator = false
+continuous_cd = 0
+contacts_reported = 0
+contact_monitor = false
+sleeping = false
+can_sleep = true
+velocity/linear = Vector2( 0, 0 )
+velocity/angular = 5.0
+damp_override/linear = 2.0
+damp_override/angular = 0.0
+__meta__ = { "_edit_group_":true }
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="RainingMen/RigidBody2D4 3"]
+
+frames = ExtResource( 2 )
+animation = "walk_right"
+frame = 2
+playing = true
+
+[node name="RigidBody2D3" type="RigidBody2D" parent="RainingMen"]
+
+editor/display_folded = true
+transform/pos = Vector2( 116, -449 )
+input/pickable = false
+collision/layers = 1
+collision/mask = 1
+mode = 0
+mass = 1.0
+friction = 1.0
+bounce = 0.0
+gravity_scale = 1.0
+custom_integrator = false
+continuous_cd = 0
+contacts_reported = 0
+contact_monitor = false
+sleeping = false
+can_sleep = true
+velocity/linear = Vector2( 0, 0 )
+velocity/angular = 5.0
+damp_override/linear = 2.0
+damp_override/angular = 0.0
+__meta__ = { "_edit_group_":true }
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="RainingMen/RigidBody2D3"]
+
+frames = ExtResource( 2 )
+animation = "walk_forward"
+frame = 1
+playing = true
+
+[node name="RigidBody2D4 4" type="RigidBody2D" parent="RainingMen"]
+
+editor/display_folded = true
+transform/pos = Vector2( 105, -754 )
+input/pickable = false
+collision/layers = 1
+collision/mask = 1
+mode = 0
+mass = 1.0
+friction = 1.0
+bounce = 0.0
+gravity_scale = 1.0
+custom_integrator = false
+continuous_cd = 0
+contacts_reported = 0
+contact_monitor = false
+sleeping = false
+can_sleep = true
+velocity/linear = Vector2( 0, 0 )
+velocity/angular = 5.0
+damp_override/linear = 2.0
+damp_override/angular = 0.0
+__meta__ = { "_edit_group_":true }
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="RainingMen/RigidBody2D4 4"]
+
+frames = ExtResource( 2 )
+animation = "walk_forward"
+playing = true
+
+[node name="Panel" type="Panel" parent="."]
+
+visibility/visible = false
+material/material = SubResource( 1 )
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 514.0
+margin/bottom = 290.0
+
+[node name="Sprite 2" type="Sprite" parent="."]
+
+transform/pos = Vector2( 28.0001, 27.0001 )
+transform/scale = Vector2( 10, 10 )
+texture = SubResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="."]
+
+transform/pos = Vector2( 256, 600 )
+transform/scale = Vector2( 8, 8 )
+texture = ExtResource( 3 )
+
+[node name="Label" type="Label" parent="."]
+
+rect/scale = Vector2( 3, 3 )
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 0.0
+margin/top = -75.0
+margin/right = 171.0
+margin/bottom = -50.0
+custom_fonts/font = ExtResource( 4 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = "HexDSL - The Game"
+align = 1
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+playback/process_mode = 1
+playback/default_blend_time = 0.0
+root/root = NodePath("..")
+anims/Intro = SubResource( 3 )
+playback/active = true
+playback/speed = 1.0
+blend_times = [  ]
+autoplay = "Intro"
+
+[node name="Container" type="Container" parent="."]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 79.0
+margin/top = 24.0
+margin/right = 119.0
+margin/bottom = 64.0
+
+[node name="Start" type="Button" parent="."]
+
+rect/scale = Vector2( 3, 3 )
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 512.0
+margin/top = 100.0
+margin/right = 564.0
+margin/bottom = 131.0
+custom_styles/hover = ExtResource( 5 )
+custom_fonts/font = ExtResource( 4 )
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+flat = true
+
+[node name="Label" type="Label" parent="Start"]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 52.0
+margin/bottom = 31.0
+custom_fonts/font = ExtResource( 4 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = "Start"
+align = 1
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="Exit" type="Button" parent="."]
+
+rect/scale = Vector2( 3, 3 )
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = -156.0
+margin/top = 100.0
+margin/right = -104.0
+margin/bottom = 131.0
+custom_styles/hover = ExtResource( 5 )
+custom_fonts/font = ExtResource( 4 )
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+flat = true
+
+[node name="Label1" type="Label" parent="Exit"]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 52.0
+margin/bottom = 31.0
+custom_fonts/font = ExtResource( 4 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = "Exit"
+align = 1
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+

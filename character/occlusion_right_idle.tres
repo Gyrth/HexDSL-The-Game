@@ -1,0 +1,8 @@
+[gd_resource type="OccluderPolygon2D" format=1]
+
+[resource]
+
+closed = true
+cull_mode = 0
+polygon = Vector2Array( -8, 7, -4, 11, -4, 28, 8, 28, 8, 26, 4, 26, 4, 10, 8, 8, 8, -8, 4, -12, 5, -24, -1, -26, -7, -23, -6, -15, -4, -13, -8, -7, -8, -1 )
+

@@ -1,11 +1,11 @@
-[gd_scene load_steps=3 format=1]
+[gd_scene load_steps=4 format=1]
 
 [ext_resource path="res://scripts/Pause.gd" type="Script" id=1]
 [ext_resource path="res://Fonts/FifteenNarrow.fnt" type="BitmapFont" id=2]
+[ext_resource path="res://ButtonHoverBackground.tres" type="StyleBox" id=3]
 
 [node name="PauseWindow" type="Panel"]
 
-editor/display_folded = true
 visibility/self_opacity = 0.8
 anchor/left = 3
 anchor/top = 3
@@ -15,23 +15,22 @@ focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = -98.0
-margin/top = 22.0
-margin/right = -418.0
-margin/bottom = -259.0
+margin/left = -138.0
+margin/top = -8.0
+margin/right = -338.0
+margin/bottom = -208.0
 script/script = ExtResource( 1 )
-__meta__ = { "_edit_group_":true }
 
 [node name="Title" type="Label" parent="."]
 
-rect/scale = Vector2( 3, 3 )
+rect/scale = Vector2( 2, 2 )
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 0
 size_flags/vertical = 0
-margin/left = 90.0
+margin/left = 0.0
 margin/top = 0.0
-margin/right = 138.0
+margin/right = 100.0
 margin/bottom = 25.0
 custom_fonts/font = ExtResource( 2 )
 text = "Paused"
@@ -47,10 +46,11 @@ focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = 126.0
-margin/top = 108.0
-margin/right = 206.0
-margin/bottom = 139.0
+margin/left = 60.0
+margin/top = 70.0
+margin/right = 140.0
+margin/bottom = 101.0
+custom_styles/hover = ExtResource( 3 )
 custom_fonts/font = ExtResource( 2 )
 toggle_mode = false
 enabled_focus_mode = 2
@@ -64,10 +64,11 @@ focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = 126.0
-margin/top = 148.0
-margin/right = 206.0
-margin/bottom = 179.0
+margin/left = 60.0
+margin/top = 110.0
+margin/right = 140.0
+margin/bottom = 141.0
+custom_styles/hover = ExtResource( 3 )
 custom_fonts/font = ExtResource( 2 )
 toggle_mode = false
 enabled_focus_mode = 2
@@ -81,10 +82,11 @@ focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = 136.0
-margin/top = 188.0
-margin/right = 196.0
-margin/bottom = 219.0
+margin/left = 70.0
+margin/top = 150.0
+margin/right = 130.0
+margin/bottom = 181.0
+custom_styles/hover = ExtResource( 3 )
 custom_fonts/font = ExtResource( 2 )
 toggle_mode = false
 enabled_focus_mode = 2

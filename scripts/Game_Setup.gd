@@ -5,6 +5,7 @@ extends Node2D
 # var b = "textvar"
 
 func _ready():
+#	OS.set_window_maximized(true)
 #	var screen_size = OS.get_screen_size(0)
 #	var window_size = Vector2(1280, 720)
 #	
